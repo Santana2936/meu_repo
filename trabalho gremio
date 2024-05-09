@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geração Consciente</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f8ff; /* Azul claro */
+            color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #87ceeb, #4682b4);
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #87ceeb; /* Azul claro */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            border-radius: 50%; /* Arredonda a logo */
+        }
+
+        .instagram img {
+            width: 60px; /* Aumenta a logo do Instagram */
+            height: 60px;
+            border-radius: 50%; /* Arredonda a borda da logo do Instagram */
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #87ceeb; /* Azul claro */
+            font-size: 24px; /* Tamanho da fonte aumentado */
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left; /* Alinha os campos à esquerda */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4682b4; /* Azul mais escuro */
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            border-color: #87ceeb; /* Azul claro */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #87ceeb; /* Azul claro */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4682b4; /* Azul mais escuro */
+        }
+
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .show-login-form.active .login-container {
+            display: block;
+        }
+
+        .login-form {
+            text-align: left;
+        }
+
+        @keyframes slide-down {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animação para o nome "Geração consciente" */
+        @keyframes text-animation {
+            0% { color: #87ceeb; }
+            50% { color: #4682b4; }
+            100% { color: #87ceeb; }
+        }
+
+        .animated-text {
+            animation: text-animation 2s infinite;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid #87ceeb; /* Adiciona borda ao nome */
+            border-radius: 10px; /* Arredonda a borda */
+            padding: 5px 10px; /* Adiciona espaçamento interno */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://th.bing.com/th/id/OIP.YBCB1SozbMVlcOBd0rHGSwHaHa?rs=1&pid=ImgDetMain" alt="Made by- Italo Santana (3º INFO CETEP)">
+            </div>
+            <div class="animated-text">Geração consciente</div> <!-- Adiciona o nome "Geração consciente" com animação -->
+            <div class="instagram">
+                <a href="https://www.instagram.com/geracaoconsciente_cetep?igsh=d2Nwdmg1Zmhwcmp0"><img src="https://www.kindpng.com/picc/m/1-19853_instagram-logo-black-transparent-instagram-logo-black-png.png" alt="Instagram"></a>
+            </div>
+        </header>
+        <section id="public-complaints">
+            <h2>Faça sua reclamação:</h2>
+            <form id="complaint-form">
+                <div class="input-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="grade">Série:</label>
+                    <input type="text" id="grade" name="grade" required>
+                </div>
+                <div class="input-group">
+                    <label for="anonymous">Reclamação anônima:</label>
+                    <input type="checkbox" id="anonymous" name="anonymous" onclick="toggleNameField()">
+                </div>
+                <div class="input-group" id="name-group">
+                    <label for="description">Descrição:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar reclamação</button>
+            </form>
+        </section>
+        <section id="admin-panel">
+            <h2>Painel de Administração</h2>
+            <button id="login-button">Login para líderes</button>
+        </section>
+    </div>
+    <div class="show-login-form">
+        <div class="login-container">
+            <div class="login-form" id="login-form">
+                <h2>Login</h2>
+                <form id="admin-login-form">
+                    <div class="input-group">
+                        <label for="username">Usuário:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Exibir o formulário de login ao clicar no botão "Login para líderes"
+        document.getElementById('login-button').addEventListener('click', function() {
+            document.querySelector('.show-login-form').classList.toggle('active');
+        });
+
+        // Função para desativar o campo de nome quando a reclamação for anônima
+        function toggleNameField() {
+            var nameField = document.getElementById('name');
+            nameField.disabled = document.getElementById('anonymous').checked;
+        }
+
+        // Definir a senha padrão para administradores
+        var adminPassword = "1234";
+        var adminUsername = "10106701584";
+
+        // Enviar reclamação
+        document.getElementById('complaint-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            // Aqui você pode adicionar o código para enviar os dados do formulário para o servidor
+            // Por exemplo, você pode usar AJAX ou fetch() para enviar os dados para o servidor e processá-los lá
+            // Depois de enviar, você pode mostrar uma mensagem de sucesso ou fazer qualquer outra ação necessária
+            alert('Reclamação enviada com sucesso!');
+        });
+
+        // Verificar login do administrador
+        document.getElementById('admin-login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username === adminUsername && password === adminPassword) {
+                alert('Login bem-sucedido como administrador!');
+                window.location.href = "https://www.instagram.com/santana_italo0?igsh=MXR4aGRramR1bm5laQ%3D%3D&utm_source=qr"; // Redireciona para a página do Instagram
+            } else {
+                alert('Usuário ou senha incorretos!');
+            }
+        });
+    </script>
+</body>
+</html>
